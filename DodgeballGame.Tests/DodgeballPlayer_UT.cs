@@ -1,5 +1,4 @@
 ﻿using DodgeballGame.Roles;
-using DodgeballGame.Stats;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -30,8 +29,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseStrength).Return(strength);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Strength.GetType(), Is.EqualTo(typeof(StrengthStat)));
-            Assert.That(testObject.Strength.Value, Is.EqualTo(strength));
+            Assert.That(testObject.Strength.CurrentValue, Is.EqualTo(strength));
         }
 
         [Test]
@@ -42,8 +40,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseAccuracy).Return(accuracy);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Accuracy.GetType(), Is.EqualTo(typeof(AccuracyStat)));
-            Assert.That(testObject.Accuracy.Value, Is.EqualTo(accuracy));
+            Assert.That(testObject.Accuracy.CurrentValue, Is.EqualTo(accuracy));
         }
 
         [Test]
@@ -54,8 +51,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseDodge).Return(dodge);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Dodge.GetType(), Is.EqualTo(typeof(DodgeStat)));
-            Assert.That(testObject.Dodge.Value, Is.EqualTo(dodge));
+            Assert.That(testObject.Dodge.CurrentValue, Is.EqualTo(dodge));
         }
 
         [Test]
@@ -66,8 +62,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseCatch).Return(catchValue);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Catch.GetType(), Is.EqualTo(typeof(CatchStat)));
-            Assert.That(testObject.Catch.Value, Is.EqualTo(catchValue));
+            Assert.That(testObject.Catch.CurrentValue, Is.EqualTo(catchValue));
         }
 
         [Test]
@@ -78,8 +73,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseSpeed).Return(speed);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Speed.GetType(), Is.EqualTo(typeof(SpeedStat)));
-            Assert.That(testObject.Speed.Value, Is.EqualTo(speed));
+            Assert.That(testObject.Speed.CurrentValue, Is.EqualTo(speed));
         }
 
         [Test]
@@ -90,8 +84,7 @@ namespace DodgeballGame.Tests
             _role.Expect(r => r.BaseEndurance).Return(endurance);
 
             var testObject = new DodgeballPlayer(_role);
-            Assert.That(testObject.Endurance.GetType(), Is.EqualTo(typeof(EnduranceStat)));
-            Assert.That(testObject.Endurance.Value, Is.EqualTo(endurance));
+            Assert.That(testObject.Endurance.CurrentValue, Is.EqualTo(endurance));
         }
     }
 }

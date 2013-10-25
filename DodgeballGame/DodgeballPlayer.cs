@@ -7,11 +7,12 @@ namespace DodgeballGame
     {
         IRole Role { get; }
 
-        IStat Strength { get; }
-        IStat Accuracy { get; }
-        IStat Dodge { get; }
-        IStat Catch { get; }
-        IStat Speed { get; }
+        IStrengthStat Strength { get; }
+        IAccuracyStat Accuracy { get; }
+        IDodgeStat Dodge { get; }
+        ICatchStat Catch { get; }
+        ISpeedStat Speed { get; }
+        IEnduranceStat Endurance { get; }
 
         IPosition Position { get; set; }
         bool InOutStatus { get; set; }
@@ -21,12 +22,12 @@ namespace DodgeballGame
     {
         public IRole Role { get; protected internal set; }
 
-        public IStat Strength { get; protected internal set; }
-        public IStat Accuracy { get; protected internal set; }
-        public IStat Dodge { get; protected internal set; }
-        public IStat Catch { get; protected internal set; }
-        public IStat Speed { get; protected internal set; }
-        public IStat Endurance { get; protected internal set; }
+        public IStrengthStat Strength { get; protected internal set; }
+        public IAccuracyStat Accuracy { get; protected internal set; }
+        public IDodgeStat Dodge { get; protected internal set; }
+        public ICatchStat Catch { get; protected internal set; }
+        public ISpeedStat Speed { get; protected internal set; }
+        public IEnduranceStat Endurance { get; protected internal set; }
 
         public IPosition Position { get; set; }
         public bool InOutStatus { get; set; }

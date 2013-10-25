@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace DodgeballGame.Stats
 {
-    public class DodgeStat : IStat
+    public interface IDodgeStat : IStat
+    {}
+
+    public class DodgeStat : IDodgeStat
     {
         private const string _displayName = "Dodge";
-        private int _value;
+        private readonly int _baseValue;
+        private int _currentValue;
         private const int _min = 1;
 
         public DodgeStat() : this(_min)
         {}
 
-        public DodgeStat(int value)
+        public DodgeStat(int baseValue)
         {
-            Value = value;
+            _baseValue = baseValue;
+            CurrentValue = baseValue;
         }
 
         public string DisplayName
@@ -24,15 +25,15 @@ namespace DodgeballGame.Stats
             get { return _displayName; }
         }
 
-        public int Value
+        public int BaseValue
         {
-            get
-            {
-                return _value;
-            }
-            set {
-                _value = value < _min ? _min : value;
-            }
+            get{ return _baseValue;}
+        }
+
+        public int CurrentValue
+        {
+            get { return _currentValue; }
+            set { _currentValue = value < _min ? _min : value; }
         }
 
         public int Min

@@ -1,18 +1,23 @@
 ﻿
 namespace DodgeballGame.Stats
 {
-    public class AccuracyStat : IStat
+    public interface IAccuracyStat : IStat
+    {}
+
+    public class AccuracyStat : IAccuracyStat
     {
         private const string _displayName = "Accuracy";
-        private int _value;
+        private readonly int _baseValue;
+        private int _currentValue;
         private const int _min = 1;
 
         public AccuracyStat() : this(_min)
         {}
 
-        public AccuracyStat(int value)
+        public AccuracyStat(int baseValue)
         {
-            Value = value;
+            _baseValue = baseValue;
+            CurrentValue = baseValue;
         }
 
         public string DisplayName
@@ -20,15 +25,15 @@ namespace DodgeballGame.Stats
             get { return _displayName; }
         }
 
-        public int Value
+        public int BaseValue
         {
-            get
-            {
-                return _value;
-            }
-            set {
-                _value = value < _min ? _min : value;
-            }
+            get { return _baseValue; }
+        }
+
+        public int CurrentValue
+        {
+            get { return _currentValue; }
+            set { _currentValue = value < _min ? _min : value; }
         }
 
         public int Min
