@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace DodgeballGame.Roles
 {
     public class KnightRole : IRole
@@ -14,6 +10,7 @@ namespace DodgeballGame.Roles
         private const int _baseCatch = 10;
         private const int _baseEndurance = 16;
 
+        #region StatGetters
         public int BaseStrength
         {
             get { return _baseStrength; }
@@ -38,12 +35,6 @@ namespace DodgeballGame.Roles
         {
             get { return _baseEndurance; }
         }
-
-        public int CurrentStrength { get; set; }
-        public int CurrentSpeed { get; set; }
-        public int CurrentAccuracy { get; set; }
-        public int CurrentDodge { get; set; }
-        public int CurrentCatch { get; set; }
-        public int CurrentEndurance { get; set; }
+        #endregion
     }
 }

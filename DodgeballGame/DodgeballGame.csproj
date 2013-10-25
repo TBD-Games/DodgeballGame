@@ -51,6 +51,13 @@
     <Compile Include="Roles\WarriorRole.cs" />
     <Compile Include="Roles\WizardRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats\AccuracyStat.cs" />
+    <Compile Include="Stats\CatchStat.cs" />
+    <Compile Include="Stats\DodgeStat.cs" />
+    <Compile Include="Stats\EnduranceStat.cs" />
+    <Compile Include="Stats\IStat.cs" />
+    <Compile Include="Stats\SpeedStat.cs" />
+    <Compile Include="Stats\StrengthStat.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

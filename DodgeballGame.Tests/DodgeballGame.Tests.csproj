@@ -48,7 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DistanceCalculator_UT.cs" />
+    <Compile Include="DodgeballPlayer_UT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats\AccuracyStat_UT.cs" />
+    <Compile Include="Stats\CatchStat_UT.cs" />
+    <Compile Include="Stats\DodgeStat_UT.cs" />
+    <Compile Include="Stats\EnduranceStat_UT.cs" />
+    <Compile Include="Stats\SpeedStat_UT.cs" />
+    <Compile Include="Stats\StrengthStat_UT.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DodgeballGame\DodgeballGame.csproj">
@@ -56,6 +63,7 @@
       <Name>DodgeballGame</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
