@@ -57,6 +57,8 @@
     <Compile Include="Stats\EnduranceStat.cs" />
     <Compile Include="Stats\IStat.cs" />
     <Compile Include="Stats\SpeedStat.cs" />
+    <Compile Include="Stats\StatCollection.cs" />
+    <Compile Include="Stats\StatCollectionBuilder.cs" />
     <Compile Include="Stats\StrengthStat.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

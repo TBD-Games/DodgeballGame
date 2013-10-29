@@ -7,12 +7,7 @@ namespace DodgeballGame
     {
         IRole Role { get; }
 
-        IStrengthStat Strength { get; }
-        IAccuracyStat Accuracy { get; }
-        IDodgeStat Dodge { get; }
-        ICatchStat Catch { get; }
-        ISpeedStat Speed { get; }
-        IEnduranceStat Endurance { get; }
+        IStatCollection Stats { get; }
 
         IPosition Position { get; set; }
         bool InOutStatus { get; set; }
@@ -22,26 +17,18 @@ namespace DodgeballGame
     {
         public IRole Role { get; protected internal set; }
 
-        public IStrengthStat Strength { get; protected internal set; }
-        public IAccuracyStat Accuracy { get; protected internal set; }
-        public IDodgeStat Dodge { get; protected internal set; }
-        public ICatchStat Catch { get; protected internal set; }
-        public ISpeedStat Speed { get; protected internal set; }
-        public IEnduranceStat Endurance { get; protected internal set; }
+        public IStatCollection Stats { get; protected internal set; }
 
         public IPosition Position { get; set; }
         public bool InOutStatus { get; set; }
 
-        public DodgeballPlayer(IRole role)
+        public DodgeballPlayer(IRole role) : this(role, new StatCollectionBuilder())
+        {}
+
+        public DodgeballPlayer(IRole role, IStatCollectionBuilder statCollectionBuilder)
         {
             Role = role;
-
-            Strength = new StrengthStat(role.BaseStrength);
-            Accuracy = new AccuracyStat(role.BaseAccuracy);
-            Dodge = new DodgeStat(role.BaseDodge);
-            Catch = new CatchStat(role.BaseCatch);
-            Speed = new SpeedStat(role.BaseSpeed);
-            Endurance = new EnduranceStat(role.BaseEndurance);
+            Stats = statCollectionBuilder.BuildStatCollection(role);
         }
     }
 }

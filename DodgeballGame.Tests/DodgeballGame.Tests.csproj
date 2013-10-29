@@ -55,6 +55,7 @@
     <Compile Include="Stats\DodgeStat_UT.cs" />
     <Compile Include="Stats\EnduranceStat_UT.cs" />
     <Compile Include="Stats\SpeedStat_UT.cs" />
+    <Compile Include="Stats\StatCollectionBuilder_UT.cs" />
     <Compile Include="Stats\StrengthStat_UT.cs" />
   </ItemGroup>
   <ItemGroup>
