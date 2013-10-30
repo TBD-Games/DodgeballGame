@@ -9,7 +9,6 @@ namespace DodgeballGame
 
         IStatCollection Stats { get; }
 
-        IPosition Position { get; set; }
         bool InOutStatus { get; set; }
     }
 
@@ -19,7 +18,6 @@ namespace DodgeballGame
 
         public IStatCollection Stats { get; protected internal set; }
 
-        public IPosition Position { get; set; }
         public bool InOutStatus { get; set; }
 
         public DodgeballPlayer(IRole role) : this(role, new StatCollectionBuilder())
@@ -30,5 +28,6 @@ namespace DodgeballGame
             Role = role;
             Stats = statCollectionBuilder.BuildStatCollection(role);
         }
+
     }
 }
