@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DistanceCalculator.cs" />
+    <Compile Include="Dodgeball.cs" />
     <Compile Include="DodgeballCourt.cs" />
     <Compile Include="DodgeballPlayer.cs" />
     <Compile Include="Position.cs" />
